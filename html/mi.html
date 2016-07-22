@@ -1,0 +1,41 @@
+<html>
+<head>
+    
+<!--
+This page tests query strings.
+For all tests to pass, it must be called with a URL with the following query string:
+http://<page>?foo=bar&q=unit
+External file paths based on symlinking to jumuishi/t/js from anywhere web accessible (e.g. a site's static directory)
+and calling the html file with a url via that symlink.
+Note that there is an asynchronous test here that will not run until several seconds after page load.
+-->
+
+<script type="text/javascript">
+    testClass = function( val ) {
+        this.val1 = val;
+    }
+    window.pageInfo = new testClass('x');
+</script>
+
+<link href="qunit.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js" type="text/javascript"></script>
+<script src="qunit.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="/mistatic/javascripts/MI.js"></script>
+<script src="mi_tests.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<h1 style="text-align:center;">QUnit tests - MI.js</h1>
+
+<div id="qunit"></div>
+<div id="qunit-fixture"></div>
+
+<div id="test1" style="display:block;height:100px;width:100px;background:#dddddd;margin:10px auto;">Test_text</div>
+
+<script type="text/javascript">runTests();</script>
+
+</body>
+</html>
